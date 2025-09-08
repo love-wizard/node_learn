@@ -9,6 +9,7 @@ const loginSchema = z.object({
 })
 
 const config: NextAuthConfig = {
+  secret: process.env.AUTH_SECRET,
   providers: [
     Credentials({
       name: "credentials",

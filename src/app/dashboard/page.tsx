@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { AuthButton } from '@/components/auth/AuthButton'
 
 export default function DashboardPage() {
   const { data: session, status } = useSession()
@@ -41,7 +40,6 @@ export default function DashboardPage() {
               <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
               <p className="text-gray-600">Welcome back, {session.user.name || session.user.email}!</p>
             </div>
-            <AuthButton />
           </div>
         </div>
       </div>

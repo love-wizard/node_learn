@@ -29,8 +29,8 @@ export function AuthButton() {
 
   if (session) {
     return (
-      <div className="flex items-center gap-4">
-        <span className="text-sm text-gray-600">
+      <div className="flex items-center gap-3">
+        <span className="text-sm text-gray-600 hidden sm:block">
           Welcome, {session.user.name || session.user.email}
         </span>
         <Button
@@ -38,8 +38,9 @@ export function AuthButton() {
           onClick={handleSignOut}
           loading={isLoading}
           disabled={isLoading}
+          className="text-sm"
         >
-          Sign Out
+          {isLoading ? 'Signing out...' : 'Sign Out'}
         </Button>
       </div>
     )
@@ -47,10 +48,10 @@ export function AuthButton() {
 
   return (
     <div className="flex items-center gap-2">
-      <Button asChild variant="outline">
+      <Button asChild variant="outline" className="text-sm">
         <a href="/auth/signin">Sign In</a>
       </Button>
-      <Button asChild>
+      <Button asChild className="text-sm">
         <a href="/auth/signup">Sign Up</a>
       </Button>
     </div>
